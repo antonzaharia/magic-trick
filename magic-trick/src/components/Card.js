@@ -11,10 +11,10 @@ export default function Card({ front, back }) {
     <div className="card-wrap" onClick={handleClick}>
       <div class="flip-card-inner">
         <div className="front">
-          <img className="card-image" src={frontTest} />
+          <img className="card-image" src={front} />
         </div>
         <div className="back">
-          <img className="card-image" src={backTest} />
+          <img className="card-image" src={back} />
         </div>
       </div>
     </div>
