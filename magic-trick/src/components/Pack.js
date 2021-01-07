@@ -11,7 +11,12 @@ export default class Pack extends Component {
     return (
       <div className="pack">
         {data.frontFirst.map((img) => (
-          <Card key={img} front={img} back={data.back} />
+          <Card
+            key={img}
+            front={img}
+            back={data.back}
+            reveal={this.props.reveal}
+          />
         ))}
       </div>
     );

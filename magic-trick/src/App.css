@@ -11,6 +11,7 @@
 
 .content {
   display: flex;
+  flex-direction: column;
   justify-content: center;
 }
 .card-wrap {
@@ -81,5 +82,27 @@
   width: 50px;
   display: flex;
   justify-content: center;
-  margin-left: 18%;
+  margin-left: 16%;
+}
+.explanation {
+  top: 110px;
+  width: 100%;
+  position: absolute;
+  font-size: 40px;
+  font-weight: 700;
+  opacity: 0;
+}
+.done-btn {
+  display: block;
+  margin: 0 auto;
+  margin-top: 350px;
+  font-size: 50px;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: crimson;
+  color: white;
+}
+.done-btn:hover {
+  background-color: rgba(214, 11, 11, 0.452);
 }
