@@ -58,3 +58,10 @@
 .back {
   transform: rotateY(180deg);
 }
+.welcome {
+  position: relative;
+  opacity: 0;
+  font-size: 50px;
+  font-weight: 900;
+  height: 100%;
+}
