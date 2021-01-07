@@ -9,7 +9,7 @@ export default function Card({ front, back }) {
   };
   return (
     <div className="card-wrap" onClick={handleClick}>
-      <div class="flip-card-inner">
+      <div className="flip-card-inner">
         <div className="front">
           <img className="card-image" src={front} />
         </div>

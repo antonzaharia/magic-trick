@@ -1,5 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
 
-export default function Welcome() {
-  return <div className="welcome">Welcome to ASimpleMagicTrick</div>;
+export default class Welcome extends Component {
+  render() {
+    return (
+      <div className="welcome">
+        <p className="welcome-text">Welcome to ASimpleMagicTrick</p>
+        <button className="start-btn" onClick={this.props.start}>
+          Start
+        </button>
+      </div>
+    );
+  }
 }
