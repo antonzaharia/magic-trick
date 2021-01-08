@@ -36,14 +36,30 @@ export default class Content extends Component {
     return (
       <div className="content">
         <Welcome start={this.handleStart} />
-        {this.state.explanation ? <Explanation firstPhase={true} /> : ""}
-        {this.state.cardChose ? <Explanation secondPhase={true} /> : ""}
+
+        {this.state.explanation ? (
+          <Explanation firstPhase={true} shuffle={this.handleShuffle} />
+        ) : (
+          ""
+        )}
+        {this.state.cardChose ? (
+          <Explanation secondPhase={true} shuffle={this.handleShuffle} />
+        ) : (
+          ""
+        )}
         {this.state.thirdPhase ? (
           <Explanation thirdPhase={true} shuffle={this.handleShuffle} />
         ) : (
           ""
         )}
-        {this.state.pack ? <Pack reveal={this.handleReveal} /> : ""}
+        {this.state.pack ? (
+          <Pack
+            reveal={this.handleReveal}
+            firstPhase={this.state.explanation ? true : false}
+          />
+        ) : (
+          ""
+        )}
       </div>
     );
   }

@@ -16,6 +16,7 @@ export default class Pack extends Component {
             front={img}
             back={data.back}
             reveal={this.props.reveal}
+            firstPhase={this.props.firstPhase}
           />
         ))}
       </div>
