@@ -3,6 +3,7 @@ import { fadeOut, welcomeFade } from "../animations/welcome";
 import Explanation from "../components/Explanation";
 import Pack from "../components/Pack";
 import Welcome from "../components/Welcome";
+import { shuffle } from "../animations/pack";
 
 export default class Content extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ export default class Content extends Component {
     this.state = {
       explanation: false,
       cardChose: false,
+      thirdPhase: false,
       pack: false,
     };
   }
@@ -22,6 +24,10 @@ export default class Content extends Component {
   handleReveal = () => {
     this.setState({ explanation: false, cardChose: true });
   };
+  handleShuffle = () => {
+    this.setState({ cardChose: false, thirdPhase: true });
+    shuffle();
+  };
 
   componentDidMount() {
     welcomeFade();
@@ -32,6 +38,11 @@ export default class Content extends Component {
         <Welcome start={this.handleStart} />
         {this.state.explanation ? <Explanation firstPhase={true} /> : ""}
         {this.state.cardChose ? <Explanation secondPhase={true} /> : ""}
+        {this.state.thirdPhase ? (
+          <Explanation thirdPhase={true} shuffle={this.handleShuffle} />
+        ) : (
+          ""
+        )}
         {this.state.pack ? <Pack reveal={this.handleReveal} /> : ""}
       </div>
     );

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import gsap from "gsap";
-import { shuffle } from "../animations/pack";
 
 export default class Explanation extends Component {
   componentDidMount() {
@@ -22,10 +21,15 @@ export default class Explanation extends Component {
           <div className="explanation">
             <div>THINK about ONE card from the following.</div>
             <div>Do Not click on it, just think about it.</div>
-            <button className="done-btn" onClick={shuffle}>
+            <button className="done-btn" onClick={this.props.shuffle}>
               I'm done!
             </button>
           </div>
+        ) : (
+          ""
+        )}
+        {this.props.thirdPhase ? (
+          <div className="explanation">I will take away one card.</div>
         ) : (
           ""
         )}
