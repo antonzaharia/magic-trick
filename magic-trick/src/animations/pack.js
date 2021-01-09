@@ -11,4 +11,7 @@ export const shuffle = () => {
   setTimeout(function () {
     gsap.to(".pack", { width: 60, duration: 1 });
   }, 500);
+  setTimeout(function () {
+    gsap.to(".take-card", { rotateX: 1080, duration: 1 });
+  }, 1600);
 };

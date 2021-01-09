@@ -8,9 +8,17 @@ export default function Card({ front, back, reveal, firstPhase }) {
       reveal();
     }
   };
+  const makeClassName = () => {
+    if (front.charAt(14) === "Q" && front.charAt(15) === "D") {
+      return "flip-card-inner take-card";
+    } else {
+      console.log(front.charAt(14), front.charAt(15));
+      return "flip-card-inner";
+    }
+  };
   return (
     <div className="card-wrap" onClick={handleClick}>
-      <div className="flip-card-inner">
+      <div className={makeClassName()}>
         <div className="front">
           <img className="card-image" src={front} />
         </div>
